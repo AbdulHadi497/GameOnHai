@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.project.gameonhai.core.ui.theme.CourtBookingTheme
+import com.project.gameonhai.feature_home.presentation.HomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

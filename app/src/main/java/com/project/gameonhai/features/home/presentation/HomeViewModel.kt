@@ -2,10 +2,10 @@ package com.project.gameonhai.feature_home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.courtbooking.core.model.Category
-import com.courtbooking.core.model.Court
-import com.courtbooking.features.home.domain.GetCategoriesUseCase
-import com.courtbooking.features.home.domain.GetCourtsUseCase
+import com.project.gameonhai.core.model.Category
+import com.project.gameonhai.core.model.Court
+import com.project.gameonhai.feature_home.domain.GetCategoriesUseCase
+import com.project.gameonhai.feature_home.domain.GetCourtsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

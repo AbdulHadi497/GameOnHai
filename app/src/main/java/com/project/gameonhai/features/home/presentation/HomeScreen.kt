@@ -19,8 +19,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.courtbooking.core.model.Category
-import com.courtbooking.core.ui.components.CourtCard
+import com.project.gameonhai.core.model.Category
+import com.project.gameonhai.core.ui.components.CourtCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
