@@ -1,4 +1,4 @@
-package com.project.gameonhai.feature_court.presentation
+package com.project.gameonhai.features.court.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

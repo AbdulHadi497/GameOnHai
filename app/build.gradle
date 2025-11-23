@@ -84,4 +84,13 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    //Google Services
+    implementation "com.google.android.gms:play-services-base:17.6.0"
+    implementation "com.google.android.gms:play-services-auth:20.6.0"
+    implementation "com.google.android.gms:play-services-maps:18.1.0"
+
+    //Glide Image
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    kapt ("com.github.bumptech.glide:compiler:4.15.1")
+
 }

@@ -5,13 +5,12 @@ import com.project.gameonhai.core.model.Court
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 class FirebaseCourtService @Inject constructor(
     private val firestore: FirebaseFirestore
 ) {
-    private val courtsCollection = firestore.collection("courts")
+    private val courtsCollection = firestore.collection("Court")
 
     fun getAllCourts(): Flow<List<Court>> = callbackFlow {
         val listener = courtsCollection
@@ -31,13 +30,17 @@ class FirebaseCourtService @Inject constructor(
         awaitClose { listener.remove() }
     }
 
-    suspend fun getCourtById(courtId: String): Court? {
-        return try {
-            val doc = courtsCollection.document(courtId).get().await()
-            doc.toObject(Court::class.java)?.copy(id = doc.id)
-        } catch (e: Exception) {
-            null
+    fun getCourtById(courtId: String): Flow<Court?> = callbackFlow {
+        val docRef = courtsCollection.document(courtId)
+        val listener = docRef.addSnapshotListener { snapshot, error ->
+            if (error != null) {
+                close(error)
+                return@addSnapshotListener
+            }
+            val court = snapshot?.toObject(Court::class.java)?.copy(id = snapshot.id)
+            trySend(court)
         }
+        awaitClose { listener.remove() }
     }
 
     fun searchCourts(query: String): Flow<List<Court>> = callbackFlow {

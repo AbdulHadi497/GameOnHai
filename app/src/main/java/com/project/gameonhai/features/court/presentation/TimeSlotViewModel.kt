@@ -2,6 +2,7 @@ package com.project.gameonhai.feature_court.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.project.gameonhai.core.model.TimeSlot
 import com.project.gameonhai.core.model.TimeSlotWithStatus
 import com.project.gameonhai.feature_court.domain.GetTimeSlotsUseCase
 import com.project.gameonhai.navigation.Screen
@@ -19,7 +20,7 @@ import javax.inject.Inject
 
 data class TimeSlotUiState(
     val timeSlots: List<TimeSlotWithStatus> = emptyList(),
-    val selectedTimeSlot: Screen.TimeSlot? = null,
+    val selectedTimeSlot: TimeSlot? = null,
     val isLoading: Boolean = false,
     val error: String? = null
 )
@@ -44,7 +45,7 @@ class TimeSlotViewModel @Inject constructor(
         _selectedDate.value = date
     }
 
-    fun selectTimeSlot(timeSlot: Screen.TimeSlot) {
+    fun selectTimeSlot(timeSlot: TimeSlot) {
         _uiState.update { it.copy(selectedTimeSlot = timeSlot) }
     }
 

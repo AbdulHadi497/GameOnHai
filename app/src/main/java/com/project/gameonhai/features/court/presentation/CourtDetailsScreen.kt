@@ -21,6 +21,7 @@ import coil.compose.AsyncImage
 import com.project.gameonhai.core.model.Court
 import com.project.gameonhai.core.model.Game
 import com.project.gameonhai.core.ui.components.GameChip
+import com.project.gameonhai.features.court.presentation.CourtDetailsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

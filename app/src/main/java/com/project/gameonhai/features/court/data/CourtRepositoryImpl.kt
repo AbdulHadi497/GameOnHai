@@ -1,4 +1,4 @@
-package com.project.gameonhai.court.data
+package com.project.gameonhai.features.court.data
 
 import com.project.gameonhai.core.data.repository.CourtRepository
 import com.project.gameonhai.core.model.Court
@@ -15,7 +15,7 @@ class CourtRepositoryImpl @Inject constructor(
     }
 
     override fun getCourtById(courtId: String): Flow<Court?> {
-        TODO("Not implemented yet")
+        return firebaseCourtService.getCourtById(courtId)
     }
 
     override fun searchCourts(query: String): Flow<List<Court>> {

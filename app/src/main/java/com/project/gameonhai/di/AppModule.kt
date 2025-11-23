@@ -12,9 +12,9 @@ import com.project.gameonhai.core.network.firebase.FirebaseCategoryService
 import com.project.gameonhai.core.network.firebase.FirebaseCourtService
 import com.project.gameonhai.core.network.firebase.FirebaseGameService
 import com.project.gameonhai.core.network.firebase.FirebaseTimeSlotService
-import com.project.gameonhai.court.data.CourtRepositoryImpl
 import com.project.gameonhai.court.data.GameRepositoryImpl
 import com.project.gameonhai.court.data.TimeSlotRepositoryImpl
+import com.project.gameonhai.features.court.data.CourtRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
